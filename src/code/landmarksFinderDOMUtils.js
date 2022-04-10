@@ -159,6 +159,7 @@ export function getARIAProvidedLabel(doc, element) {
 	if (idRefs !== null && idRefs.length > 0) {
 		const innerTexts = Array.from(idRefs.split(' '), idRef => {
 			const labelElement = doc.getElementById(idRef)
+			// FIXME: here is where we would run a callback to add a data attribute to the labelling container or something
 			return getInnerText(labelElement)
 		})
 		label = innerTexts.join(' ')
